@@ -1,0 +1,59 @@
+﻿<Window x:Class="StockRoom.Order"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StockRoom"
+        mc:Ignorable="d"
+       Title="UnrealWindow" Height="425" Width="595" x:Name="MyWindow"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True" Background="Transparent" WindowStyle="None" ResizeMode="NoResize">
+    <Grid>
+        <Border Width="auto" Height="auto" BorderBrush="Black" BorderThickness="2"
+                CornerRadius="30,30,30,30" MouseLeftButtonDown="Border_MouseLeftButtonDown" Margin="0,0,-0.4,-0.2">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF96F5F5" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid Margin="0,-10,-49.8,-0.2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="363*"/>
+                    <RowDefinition Height="68*"/>
+                </Grid.RowDefinitions>
+                <TextBlock FontWeight="Bold" Padding="5" FontSize="48" Margin="90,13,137.8,283" FontFamily="Gabriola" Height="67" Width="413" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="Black"><Run Text="𝄖𝄖Сделать заказ𝄖𝄖"/></TextBlock>
+                <Label FontWeight="Bold" Content="Введите название автозапчасти для заказа" FontSize="20" Foreground="Black" Margin="20,95,278.8,233" FontFamily="Gabriola"/>
+                <TextBox x:Name="SparePartName" FontFamily="Comic Sans MS" FontSize="20"  Margin="20,130,262.8,199" BorderBrush="Black" />
+                <Label FontWeight="Bold" Content="Введите количество указанных автозапчастей" FontSize="20" Foreground="Black" Margin="20,244,278.8,84" FontFamily="Gabriola"/>
+                <TextBox x:Name="SparePartCount" FontFamily="Comic Sans MS" FontSize="20"  Margin="20,279,262.8,50" BorderBrush="Black" />
+                <Label FontWeight="Bold" Content="Введите название автомобиля" FontSize="20" Foreground="Black" Margin="20,170,278.8,159" FontFamily="Gabriola"/>
+                <TextBox x:Name="CarName" FontFamily="Comic Sans MS" FontSize="20"  Margin="20,204,263.8,125" BorderBrush="Black" />
+                <Button Background="#FFFBCCFF" FontWeight="Bold" HorizontalAlignment="Left" Margin="30,350,0,0" VerticalAlignment="Top" Width="200" Height="60" FontSize="40" FontFamily="Gabriola" Click="Button_Click" Cursor="Hand" BorderBrush="Black" Grid.RowSpan="2">
+                    <StackPanel Orientation="Horizontal" Width="200">
+                        <Image Source="/NewImageFolder/BackButton.png" Width="42" Height="56"/>
+                        <TextBlock Text="Вернуться" Width="158"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="MakeOrder" FontWeight="Bold" FontSize="40" VerticalAlignment="Center" Background="#FFFBCCFF" Margin="355,348,74.8,23.2" FontFamily="Gabriola" Height="60" BorderBrush="Black" Cursor="Hand" Click="MakeOrder_Click" Grid.RowSpan="2">
+                    <StackPanel Orientation="Horizontal" Width="215">
+                        <Image Source="/NewImageFolder/Basket.png" Width="73" Height="52"/>
+                        <TextBlock Text="Заказать" Width="135"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="Close" FontWeight="Bold" Content="❌" Foreground="Red" FontSize="14" Background="Transparent" Margin="554,20,64.8,322" BorderBrush="{x:Null}" Click="Close_Click" IsCancel="True" AutomationProperties.Name="Close" Cursor="Hand" RenderTransformOrigin="0.5,0.5"  >
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+                <Button x:Name="Info" Margin="230,350,289.8,20.2" Style="{StaticResource info}" Click="Info_Click" Cursor="Hand" Grid.RowSpan="2"></Button>
+                <Image Source="NewImageFolder\MakeOrder.png" HorizontalAlignment="Left" Height="173" Margin="400,138,0,0" VerticalAlignment="Top" Width="170"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>       
